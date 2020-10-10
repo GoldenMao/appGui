@@ -9,10 +9,20 @@ export class HttpsService {
   constructor() {
   }
 
-  request(config) {
+  axiosData(config) {
+    /* config为如下格式
+    config:{
+      url: '/api/home',
+      method: 'get' or 'post',
+      params or data: {
+        userName: 'Lan',
+        password: '123'
+      }
+    }
+    **/
     // 1.创建axios的实例
     const instance = axios.create({
-      baseURL: 'http://127.0.0.1:8000/',
+      // baseURL: 'http://127.0.0.1:8000/',
       timeout: 5000
     })
 
@@ -33,26 +43,5 @@ export class HttpsService {
 
     // 3.发送真正的网络请求
     return instance(config);
-  }
-
-  axiosGet(config){
-    return this.request({
-    url: '/api/home',
-    method: 'get',
-    // params: {
-    //     userName: 'Lan',
-    //     password: '123'
-    // }
-  });
-  }
-  axiosPost(config){
-    return this.request({
-    url: '/api/home',
-    method: 'post',
-    // data: {
-    //     userName: 'Lan',
-    //     password: '123'
-    // }
-  });
   }
 }
