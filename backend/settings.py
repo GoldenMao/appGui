@@ -25,7 +25,7 @@ SECRET_KEY = '6ynic155v=!izwx5s5$szxq#3#kzraqa3fb)a1i=7dnyi(z_qa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -118,15 +118,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-# 静态文件存储目录：根目录/static/
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-
-
-# # 静态文件存储目录：根目录/frontend/dist/frontend/
-# STATIC_URL = '/frontend/'
+# STATIC_URL = '/static/'
+# # 静态文件存储目录：根目录/static/
 # STATICFILES_DIRS = [
-# os.path.join(BASE_DIR, "frontend/dist/frontend"),
+#     os.path.join(BASE_DIR, 'static'),
 # ]
+
+
+# angular静态文件存储目录：根目录/frontend/dist/frontend/
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "frontend/dist/frontend"),
+]
